@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.6 (2020-09-27)
+
+
+### Bug Fixes
+
+* remove angulartics ([c9cbab7](https://github.com/LabsAdemy/ab-geo/commit/c9cbab7509ec929da4eadd36a48aee89705c3011))
+
 ### [0.0.5](https://github.com/LabsAdemy/ab-geo/compare/v0.0.4...v0.0.5) (2020-09-27)
 
 ### [0.0.4](https://github.com/LabsAdemy/ab-geo/compare/v0.0.3...v0.0.4) (2020-09-23)
