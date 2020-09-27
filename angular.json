@@ -1,0 +1,138 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "ab-geo-app": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/ab-geo-app",
+      "sourceRoot": "projects/ab-geo-app/src",
+      "prefix": "ab-geo",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ab-geo-app",
+            "index": "projects/ab-geo-app/src/index.html",
+            "main": "projects/ab-geo-app/src/main.ts",
+            "polyfills": "projects/ab-geo-app/src/polyfills.ts",
+            "tsConfig": "projects/ab-geo-app/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/ab-geo-app/src/favicon.ico",
+              "projects/ab-geo-app/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "projects/ab-geo-app/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/ab-geo-app/src/environments/environment.ts",
+                  "with": "projects/ab-geo-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ab-geo-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ab-geo-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ab-geo-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ab-geo-app/src/test.ts",
+            "polyfills": "projects/ab-geo-app/src/polyfills.ts",
+            "tsConfig": "projects/ab-geo-app/tsconfig.spec.json",
+            "karmaConfig": "projects/ab-geo-app/karma.conf.js",
+            "assets": [
+              "projects/ab-geo-app/src/favicon.ico",
+              "projects/ab-geo-app/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "projects/ab-geo-app/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ab-geo-app/tsconfig.app.json",
+              "projects/ab-geo-app/tsconfig.spec.json",
+              "projects/ab-geo-app/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/ab-geo-app/e2e/protractor.conf.js",
+            "devServerTarget": "ab-geo-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ab-geo-app:serve:production"
+            }
+          }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": false
+  },
+  "defaultProject": "ab-geo-app"
+}

@@ -1,0 +1,12 @@
+<mat-card *ngIf="city!=undefined">
+  <mat-card-title>{{ city.name }}</mat-card-title>
+  <mat-card-subtitle>{{ city.country }}, {{ city.region  }}</mat-card-subtitle>
+  <mat-card-content>
+    <p>
+      latitude: {{ city.latitude  }}
+    </p>
+    <p>
+      longitude {{ city.longitude  }}
+    </p>
+  </mat-card-content>
+</mat-card>
