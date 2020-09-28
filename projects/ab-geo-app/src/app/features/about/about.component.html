@@ -6,4 +6,8 @@
          [formControl]="email"
          required>
 </mat-form-field>
-<button> Send me </button>
+<button angulartics2On="click"
+        angularticsCategory="Clicks"
+        angularticsAction="Send"
+        angularticsLabel="email"
+        angularticsValue="{{email.value}}"> Send me </button>
