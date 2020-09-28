@@ -1,7 +1,8 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { MatSort } from '@angular/material/sort';
+import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Title } from '@angular/platform-browser';
+import { GoogleAnalyticsService } from 'ngx-google-analytics';
 
 interface PortCity {
   city: string;
@@ -30,7 +31,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatSort) sort: MatSort | null = null;
 
-  constructor(private titleService: Title) {
+  constructor(
+    private titleService: Title,
+    private $gaService: GoogleAnalyticsService
+  ) {
     this.titleService.setTitle('Geo - List of ports');
   }
 
@@ -39,4 +43,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {}
+
+  sortChanged(sortChange: Sort) {
+    this.$gaService.event(
+      `by ${sortChange.active}`,
+      'sort_ports',
+      sortChange.direction
+    );
+  }
 }

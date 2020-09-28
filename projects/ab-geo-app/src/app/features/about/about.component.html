@@ -1,1 +1,13 @@
-<p>about works!</p>
+<h1>Sample app</h1>
+<mat-form-field appearance="fill">
+  <mat-label>Enter your email</mat-label>
+  <input matInput
+         placeholder="pat@example.com"
+         [formControl]="email"
+         gaEvent="fill_blur"
+         gaCategory="form_input"
+         gaAction="email"
+         required>
+</mat-form-field>
+<button gaEvent="send_form"
+        gaCategory="buttons"> Send me </button>
