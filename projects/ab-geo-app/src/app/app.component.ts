@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Angulartics2GoogleGlobalSiteTag } from 'angulartics2/gst';
 
 @Component({
   selector: 'ab-geo-root',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ab-geo-app';
+  constructor(angulartics: Angulartics2GoogleGlobalSiteTag) {
+    angulartics.startTracking();
+  }
 }
