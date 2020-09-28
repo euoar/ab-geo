@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { Title } from '@angular/platform-browser';
 
 interface PortCity {
   city: string;
@@ -28,6 +29,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
   dataSource = new MatTableDataSource(PORT_CITIES);
 
   @ViewChild(MatSort) sort: MatSort | null = null;
+
+  constructor(private titleService: Title) {
+    this.titleService.setTitle('Geo - List of ports');
+  }
 
   ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;
