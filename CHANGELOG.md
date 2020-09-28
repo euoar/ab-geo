@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://github.com/LabsAdemy/ab-geo/compare/v0.0.7...v0.0.8) (2020-09-28)
+
+
+### Features
+
+* page title based on route ([1818015](https://github.com/LabsAdemy/ab-geo/commit/1818015e4f6eb7a472561e24fbbc87f5ed86cd2b))
+* title links to home ([9ef768d](https://github.com/LabsAdemy/ab-geo/commit/9ef768dfe04fd584b96964896107e7c7f28bc096))
+
 ### [0.0.7](https://github.com/LabsAdemy/ab-geo/compare/v0.0.6...v0.0.7) (2020-09-27)
 
 
