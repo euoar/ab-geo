@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "prerelease": "standard-version",
     "release": "git push --follow-tags origin master",
-    "predeploy": "npm run release && npm run build:prod:stats",
+    "predeploy": "npm run release",
     "deploy": " ng deploy --base-href=/ab-geo/",
     "build:prod:stats": "ng build --prod --stats-json",
     "analyze": "npm run build:prod:stats && webpack-bundle-analyzer ./dist/ab-geo/stats-es2015.json",
