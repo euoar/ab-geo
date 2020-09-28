@@ -9,6 +9,7 @@ Instalaciones de npm
 ### Creación del espacio de trabajo
 
 ```bash
+npm install -g @angular/cli
 ng new ab-geo --create-application false --strict
 cd ab-geo
 code .
