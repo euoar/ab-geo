@@ -1,7 +1,8 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { MatSort } from '@angular/material/sort';
+import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Title } from '@angular/platform-browser';
+import { Angulartics2 } from 'angulartics2';
 
 interface PortCity {
   city: string;
@@ -30,7 +31,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatSort) sort: MatSort | null = null;
 
-  constructor(private titleService: Title) {
+  constructor(private titleService: Title, private angulartics2: Angulartics2) {
     this.titleService.setTitle('Geo - List of ports');
   }
 
@@ -39,4 +40,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {}
+
+  sortChanged(sort: Sort) {
+    this.angulartics2.eventTrack.next({
+      action: `by ${sort.active}`,
+      properties: {
+        category: 'sort',
+        label: sort.direction,
+      },
+    });
+  }
 }
