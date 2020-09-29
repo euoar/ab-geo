@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
+declare let gtag: Function;
 
 @Component({
   selector: 'ab-geo-about',
@@ -15,4 +16,13 @@ export class AboutComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  clicked() {
+    gtag('event', 'Click', {
+      eventCategory: 'Botones',
+      eventLabel: 'eventLabel',
+      eventAction: 'eventAction',
+      eventValue: 1,
+    });
+  }
 }

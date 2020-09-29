@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'projects/ab-geo-app/src/environments/environment';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { City } from '../City';
@@ -7,7 +8,7 @@ import { GeoDbResponse } from './GeoDbResponse';
 
 @Injectable()
 export class GeoDbService {
-  private rootGeoDb = 'http://geodb-free-service.wirefreethought.com/v1/geo';
+  private rootGeoDb = environment.geoDbUrl;
 
   constructor(private http: HttpClient) {}
 

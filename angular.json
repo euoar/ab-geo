@@ -31,7 +31,9 @@
               "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "projects/ab-geo-app/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "projects/ab-geo-app/src/ga.js"
+            ]
           },
           "configurations": {
             "production": {

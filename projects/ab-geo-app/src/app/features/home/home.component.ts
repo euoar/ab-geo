@@ -25,6 +25,8 @@ const PORT_CITIES: PortCity[] = [
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit, AfterViewInit {
+  titulo = 'Lista de puertos';
+
   displayedColumns: string[] = ['city', 'country'];
   dataSource = new MatTableDataSource(PORT_CITIES);
 
